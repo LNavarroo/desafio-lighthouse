@@ -1,7 +1,3 @@
-{{ config(
-    pre_hook=["ALTER SESSION SET DATE_LANGUAGE='portuguese'"]
-) }}
-
 WITH fonte_calendario AS (
     SELECT 
         DATEADD(DAY, SEQ4(), '2009-01-01') AS d
