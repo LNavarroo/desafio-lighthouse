@@ -27,9 +27,30 @@ WITH fonte_calendario AS (
             WHEN 11 THEN 'Novembro'
             WHEN 12 THEN 'Dezembro'
         END AS nome_mes,
+        EXTRACT(QUARTER FROM d) AS trimestre,
         EXTRACT(DAYOFWEEK FROM d) AS dia_da_semana,
         TO_CHAR(d, 'Day') AS nome_dia_da_semana,
         CASE WHEN EXTRACT(DAYOFWEEK FROM d) IN (1, 7) THEN TRUE ELSE FALSE END AS dia_util
+
+        ,CASE 
+        WHEN POSITION('r' IN LOWER(
+            CASE EXTRACT(MONTH FROM d)
+                WHEN 1 THEN 'Janeiro'
+                WHEN 2 THEN 'Fevereiro'
+                WHEN 3 THEN 'Março'
+                WHEN 4 THEN 'Abril'
+                WHEN 5 THEN 'Maio'
+                WHEN 6 THEN 'Junho'
+                WHEN 7 THEN 'Julho'
+                WHEN 8 THEN 'Agosto'
+                WHEN 9 THEN 'Setembro'
+                WHEN 10 THEN 'Outubro'
+                WHEN 11 THEN 'Novembro'
+                WHEN 12 THEN 'Dezembro'
+            END
+        )) > 0 THEN 'Com R' 
+        ELSE 'Sem R' 
+    END AS tem_r_mes 
     FROM fonte_calendario
 )
 
