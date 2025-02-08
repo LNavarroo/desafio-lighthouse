@@ -9,6 +9,7 @@ with
             cast(COD_CLIENTE as int) as pk_cliente
             ,cast(PRIMEIRO_NOME as string) as PRIMEIRO_NOME_cliente
             ,cast(ULTIMO_NOME as string) as ULTIMO_NOME_cliente
+            ,concat(PRIMEIRO_NOME, ' ', ULTIMO_NOME) as nome_completo_cliente
             ,cast(EMAIL as string) as EMAIL_cliente
             ,cast(TIPO_CLIENTE as string) as tipo_cliente
             ,cast(DATA_INCLUSAO as string) as DATA_INCLUSAO_cliente
