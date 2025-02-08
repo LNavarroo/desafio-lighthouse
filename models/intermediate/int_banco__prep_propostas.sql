@@ -38,6 +38,7 @@
             ,propostas_credito.VALOR_ENTRADA_PROPOSTA
             ,propostas_credito.VALOR_PRESTACAO_PROPOSTA
             ,propostas_credito.DATA_ENTRADA_PROPOSTA_tratada
+            ,cast(((VALOR_PRESTACAO_PROPOSTA * QUANTIDADE_PARCELAS_PROPOSTA + VALOR_ENTRADA_PROPOSTA) - VALOR_FINANCIAMENTO_PROPOSTA) as float) AS LUCRO
 
         from propostas_credito
         left join colaboradores on propostas_credito.fk_colaborador = colaboradores.pk_colaborador

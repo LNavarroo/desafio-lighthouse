@@ -11,6 +11,7 @@
             PK_CLIENTE
             ,PRIMEIRO_NOME_CLIENTE
             ,ULTIMO_NOME_CLIENTE
+            ,nome_completo_cliente
             ,CPF_CNPJ_CLIENTE
             ,EMAIL_CLIENTE
             ,TIPO_CLIENTE
