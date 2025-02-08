@@ -5,4 +5,4 @@ with
     )
 
 select *
-from dim_agencias
+from dim_agencias 

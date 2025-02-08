@@ -25,7 +25,7 @@
             ,contas.SALDO_DISPONIVEL_CONTA
             ,transacoes.NOME_TRANSACAO
             ,transacoes.VALOR_TRANSACAO
-            ,transacoes.DATA_TRANSACAO_TRATADA
+            ,cast(transacoes.DATA_TRANSACAO as date) as DATA_TRANSACAO
             ,contas.DATA_ABERTURA_CONTA_TRATADA
             ,contas.DATA_ULTIMO_LANCAMENTO_CONTA_tratada
 
